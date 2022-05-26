@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from "react-router-dom"
+import LogarConta from './components/LogarConta';
+import LoginContext from './constext/LoginContext';
+import Logado from './components/Logado';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <LoginContext>
+        <Routes>
+          <Route path='/Ok' element={<Logado />}></Route>
+          <Route path='/' element={<LogarConta></LogarConta>}></Route>
+        </Routes>
+      </LoginContext>
     </div>
   );
 }
